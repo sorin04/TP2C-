@@ -2,4 +2,6 @@ using namespace std;
 #include <string>
 #include "Article.h"
 
-string Article::getNom;
+string Article::getNom() {
+	return string();
+}

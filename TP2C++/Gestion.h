@@ -1,5 +1,8 @@
 #pragma once
-class Gestion
-{
-};
 
+
+class IHM {
+
+public:
+   
+};
