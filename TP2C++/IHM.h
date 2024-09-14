@@ -1,10 +1,17 @@
 #pragma once
+#include "Gestion.h"
 
 class IHM {
+	void afficherMenu();
 	void gererMenu();
-public:
+private:
 	Gestion gestion;
-	void supprimerArticle();
+	void afficherMenu();
+
+
+
+public:
+void supprimerArticle();
 	void afficherTotalStockHT();
 	void mettreAJourArticle();
 	void afficherArticles();

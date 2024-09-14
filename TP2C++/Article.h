@@ -3,10 +3,14 @@ using namespace std;
 #include <string>;
 class Article
 {
-	string nom;
 public:
-	Article(string n);
-	string getNom();
+	string nom;
 	double prixHT;
 	int stock;
+
+	Article(string n, double prix, int s) {
+
+	}
+
+
 };
