@@ -1,47 +1,58 @@
 #include "Gestion.h"
+#include "Article.h"
 #include <iostream>
+using namespace std;
+
 
 
 void Gestion::ajouterArticle(Article article) {
 	articles.push_back(article);
-	std::cout<< "Article ajouté.\n";
+	cout<< "Article ajouté.\n";
 
 }
 void Gestion::afficherArticles() {
 	for (Article& article : articles) {
-		std::cout << "Nom: " << article.nom << ", Prix HT: " << article.prixHT << ", Stock: " << article.stock << std::endl;
+		cout << "Nom: " << article.getNom() << ", Prix HT: " << article.getPrixHT() << ", Stock: " << article.getStock() << std::endl;
 	}
 }
-void Gestion::modifierArticle(std::string nom, double prixHT, int stock) {
-	for (Articles& article::articles) {
-		if (article.nom == nom)
+void Gestion::modifierArticle(string nom, double prixHT, int stock) {
+	for (Article& article:articles) {
+		if (article.getNom() == nom)
 		{
-			article.prixHT = prixHT;
-			article.stock = stock;
+			article.setPrixHT(prixHT);
+			article.setStock(stock);
 			cout<<"Article mis a jour.\n";
 			return;
 
 		}
 		
-
 	}
-	std::cout << "Article non trouvé.\n";
+	cout << "Article non trouvé.\n";
+		
+	
+}
+void Gestion::supprimerArticle(string nom) {
+		vector<Article> articlesRestants;
 
-	void Gestion::supprimerArticle(std::string nom) {
-		for (auto it = articles.begin(); it != articles.end(); ++it) {
-			if (it->nom == nom) {
-				articles.erase(it);
-				std::cout << "Article supprimé.\n";
-				return;
-			}
+
+	for (size_t i = 0; i < articles.size(); ++i) {
+		if (articles[i].getNom() != nom) {
+			articlesRestants.push_back(articles[i]);
 		}
-		std::cout << "Article non trouvé.\n";
 	}
+	articles = articlesRestants;
+
+	if (articles.size() < articlesRestants.size()) {
+		cout << "Article supprimé.\n";
+	}
+	else {
+		cout << "Article non trouvé.\n";
+	}
+}
 	double Gestion::calculerTotalStockHT() {
     double total = 0.0;
     for (Article& article : articles) {
         total += article.prixHT * article.stock;
     }
     return total;
-}
 }

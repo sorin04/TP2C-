@@ -22,6 +22,7 @@
     <ClCompile Include="Article.cpp" />
     <ClCompile Include="Gestion.cpp" />
     <ClCompile Include="IHM.cpp" />
+    <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Article.h" />

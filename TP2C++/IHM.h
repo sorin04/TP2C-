@@ -2,8 +2,6 @@
 #include "Gestion.h"
 
 class IHM {
-	void afficherMenu();
-	void gererMenu();
 private:
 	Gestion gestion;
 	void afficherMenu();
@@ -16,7 +14,9 @@ void supprimerArticle();
 	void mettreAJourArticle();
 	void afficherArticles();
 	void ajouterArticle();
-	void afficherTotalStockHT();
+	void gererMenu();
+
+	
 
 
 };
